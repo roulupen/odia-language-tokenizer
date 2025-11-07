@@ -6,6 +6,22 @@ A Byte-Pair Encoding (BPE) tokenizer specifically designed for the Odia (ଓଡ�
 
 Traditional tokenizers trained primarily on English text struggle with non-English scripts like Odia because they treat complex Unicode characters inefficiently, often breaking them into multiple byte-level tokens. This results in poor compression, increased token counts, and suboptimal representation of the linguistic structure inherent to Indic scripts.
 
+## Live Demo
+
+Try out the tokenizer in our interactive Hugging Face Space:
+
+🚀 **[Odia Language BPE Tokenizer Demo](https://huggingface.co/spaces/roulupen/odia-language-bpe-tokenizer)**
+
+### Demo Interface
+
+**Encoding Example:**
+
+![Odia Tokenizer Encoding](./assets/Odia-Tokenizer-encoding.png)
+
+**Decoding Example:**
+
+![Odia Tokenizer Decoding](./assets/Odia-Tokonizer-Decoding.png)
+
 ## Odia Script Unicode Range
 
 The Odia script uses Unicode range `U+0B00 – U+0B7F` (128 code points), which includes:
@@ -157,22 +173,6 @@ Match:    True
 Compression ratio: 6.18x
 Bytes per token:   6.18
 ```
-
-## Live Demo
-
-Try out the tokenizer in our interactive Hugging Face Space:
-
-🚀 **[Odia Language BPE Tokenizer Demo](https://huggingface.co/spaces/roulupen/odia-language-bpe-tokenizer)**
-
-### Demo Interface
-
-**Encoding Example:**
-
-![Odia Tokenizer Encoding](./assets/Odia-Tokenizer-encoding.png)
-
-**Decoding Example:**
-
-![Odia Tokenizer Decoding](./assets/Odia-Tokonizer-Decoding.png)
 
 ## Project Structure
 
