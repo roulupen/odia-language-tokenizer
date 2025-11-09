@@ -58,8 +58,8 @@ The tokenizer was trained on the [OdiaGenAI Pre-train Odia Data Processed](https
 
 - **Training samples**: 500,000 records
 - **Training text size**: 49,299,688 characters
-- **Vocabulary size**: 4,000 tokens
-- **Number of BPE merges**: 3,744
+- **Vocabulary size**: 10,000 tokens
+- **Number of BPE merges**: 9,744
 
 ### Training Logs
 
@@ -68,36 +68,36 @@ Below are sample logs from the BPE training process showing the most frequent me
 ```
 Training tokenizer...
 Text split into 14827345 chunks
-merge 1/3744: (224, 172) -> 256 (�) had 31586333 occurrences
-merge 2/3744: (224, 173) -> 257 (�) had 9102226 occurrences
-merge 3/3744: (256, 190) -> 258 (ା) had 3680563 occurrences
-merge 4/3744: (257, 141) -> 259 (୍) had 3621787 occurrences
-merge 5/3744: (256, 176) -> 260 (ର) had 3412710 occurrences
-merge 6/3744: (256, 191) -> 261 (ି) had 3381404 occurrences
-merge 7/3744: (259, 256) -> 262 (୍�) had 2288435 occurrences
-merge 8/3744: (261, 256) -> 263 (ି�) had 2233023 occurrences
-merge 9/3744: (258, 256) -> 264 (ା�) had 2157223 occurrences
-merge 10/3744: (257, 135) -> 265 (େ) had 1808806 occurrences
-merge 11/3744: (256, 149) -> 266 (କ) had 1349971 occurrences
-merge 12/3744: (257, 129) -> 267 (ୁ) had 1148230 occurrences
-merge 13/3744: (256, 168) -> 268 (ନ) had 1094714 occurrences
-merge 14/3744: (256, 184) -> 269 (ସ) had 1040635 occurrences
-merge 15/3744: (256, 172) -> 270 (ବ) had 1031023 occurrences
-merge 16/3744: (256, 170) -> 271 (ପ) had 965046 occurrences
-merge 17/3744: (256, 174) -> 272 (ମ) had 848968 occurrences
-merge 18/3744: (257, 159) -> 273 (ୟ) had 707372 occurrences
-merge 19/3744: (256, 185) -> 274 (ହ) had 688490 occurrences
-merge 20/3744: (258, 260) -> 275 (ାର) had 623466 occurrences
-merge 21/3744: (259, 260) -> 276 (୍ର) had 612859 occurrences
-merge 22/3744: (256, 164) -> 277 (ତ) had 601438 occurrences
-merge 23/3744: (257, 139) -> 278 (ୋ) had 516884 occurrences
+merge 1/9744: (224, 172) -> 256 (�) had 31586333 occurrences
+merge 2/9744: (224, 173) -> 257 (�) had 9102226 occurrences
+merge 3/9744: (256, 190) -> 258 (ା) had 3680563 occurrences
+merge 4/9744: (257, 141) -> 259 (୍) had 3621787 occurrences
+merge 5/9744: (256, 176) -> 260 (ର) had 3412710 occurrences
+merge 6/9744: (256, 191) -> 261 (ି) had 3381404 occurrences
+merge 7/9744: (259, 256) -> 262 (୍�) had 2288435 occurrences
+merge 8/9744: (261, 256) -> 263 (ି�) had 2233023 occurrences
+merge 9/9744: (258, 256) -> 264 (ା�) had 2157223 occurrences
+merge 10/9744: (257, 135) -> 265 (େ) had 1808806 occurrences
+merge 11/9744: (256, 149) -> 266 (କ) had 1349971 occurrences
+merge 12/9744: (257, 129) -> 267 (ୁ) had 1148230 occurrences
+merge 13/9744: (256, 168) -> 268 (ନ) had 1094714 occurrences
+merge 14/9744: (256, 184) -> 269 (ସ) had 1040635 occurrences
+merge 15/9744: (256, 172) -> 270 (ବ) had 1031023 occurrences
+merge 16/9744: (256, 170) -> 271 (ପ) had 965046 occurrences
+merge 17/9744: (256, 174) -> 272 (ମ) had 848968 occurrences
+merge 18/9744: (257, 159) -> 273 (ୟ) had 707372 occurrences
+merge 19/9744: (256, 185) -> 274 (ହ) had 688490 occurrences
+merge 20/9744: (258, 260) -> 275 (ାର) had 623466 occurrences
+merge 21/9744: (259, 260) -> 276 (୍ର) had 612859 occurrences
+merge 22/9744: (256, 164) -> 277 (ତ) had 601438 occurrences
+merge 23/9744: (257, 139) -> 278 (ୋ) had 516884 occurrences
 ...
 
 ============================================================
 Training Complete!
 ============================================================
-Vocabulary size: 4000
-Number of merges: 3744
+Vocabulary size: 10000
+Number of merges: 9744
 Compression ratio: 6.18x
 ```
 
@@ -131,7 +131,7 @@ training_text = ' '.join(ds['train']['text'][:num_samples])
 
 # Train tokenizer
 tokenizer = OdiaBPETokenizer(pattern=ODIA_SPLIT_PATTERN)
-stats = tokenizer.train(training_text, vocab_size=4000, verbose=True)
+stats = tokenizer.train(training_text, vocab_size=10000, verbose=True)
 
 # Save the model
 tokenizer.save("odia_bpe_tokenizer")
