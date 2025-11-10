@@ -22,6 +22,10 @@ Try out the tokenizer in our interactive Hugging Face Space:
 
 ![Odia Tokenizer Decoding](./assets/Odia-Tokonizer-Decoding.png)
 
+**GPT-4 Encoding for the same text:**
+![Odia Tokenizer Encoding](./assets/GPT4-Encoder.png)
+
+**It clearly shows the custom Odia language tokenizer I have built has better compression ratio than compared to GPT-4.**
 ## Odia Script Unicode Range
 
 The Odia script uses Unicode range `U+0B00 – U+0B7F` (128 code points), which includes:
@@ -98,11 +102,12 @@ Training Complete!
 ============================================================
 Vocabulary size: 10000
 Number of merges: 9744
-Compression ratio: 6.18x
+Compression ratio: 7.70x
 ```
 
-The tokenizer achieves a **6.18x compression ratio** on Odia text, significantly reducing token counts compared to raw byte encoding.
+The tokenizer achieves a **7.70x compression ratio** on Odia text, significantly reducing token counts compared to raw byte encoding.
 
+**Training Notebook**: [Training Notebook](./odia_tokenizer_example.ipynb)
 ## Usage
 
 ### Installation
